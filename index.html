@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Side Bar Example</title>
+<style>
+ 
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .sidebar {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #e9e6e6;
+    padding-top: 70px;
+    padding-left: 50px;
+  }
+  
+  
+  .sidebar div {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black !important;
+    cursor: pointer;
+  }
+  .Messages{
+    color: blue;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #b0aaaa;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+
+  .content {
+    margin-left: 230px;
+  }
+  
+
+  .main-content {
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 1250px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .mc {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .ep {
+    margin-top: 10px;
+    padding-left: 50px;
+  }
+  
+  .ep span {
+    color: green;
+    padding-left: 40px;
+  }
+  
+  .prof {
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    margin-right: 20px;
+  }
+  
+  .button-container {
+    display: contents;
+    flex-direction: row;
+    margin-left: auto;
+    padding-right: 100px; 
+  }
+  .button-post{
+    background-color: rgb(55, 55, 233);
+    
+    color:white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    width: 90px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .button {
+    background-color: grey;
+    border-color: gray;
+    color:black;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    width: 90px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .ins-img {
+    height: 12px;
+    width: 12px;
+    padding-right: 4px;
+    padding-top: 2px;
+  }
+  
+  .new-button {
+    margin-left: 18px;
+  }
+  
+  .bus-bg {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .bus {
+ 
+    border-radius: 10px;
+  }
+  
+  .bus {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 400px;
+    height: 200px;
+    border: 1px solid gray;
+    background-color: #474343;
+    background-image: url("card.png");
+    background-size: cover;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: row;
+   
+  }
+  
+  .bot {
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 300px; 
+    height: 430px;
+    background-color: rgb(207, 203, 203); 
+    border-radius: 10px; 
+    text-align: center; 
+    
+  }
+  
+  .box {
+    margin-top:30px ;
+    
+  }
+  
+  .box,
+  .blast,
+  .not {
+    margin-left: 30px;
+    width: 400px; 
+    height: 200px;
+    background-color:  rgb(207, 203, 203); 
+    border-radius: 10px; 
+    text-align: center; 
+    
+  }
+  .not,.box{
+    height:100px;
+  }
+  
+
+  @media screen and (max-height: 450px) {
+    .sidebar div {
+      font-size: 16px;
+    }
+  }
+  
+  .ok {
+    margin-left: 650px;
+  }
+  
+  .var {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .blast {
+    margin-top: 30px;
+  }
+  .not {
+    margin-top: 30px;
+  }
+  
+  .other {
+    width: 1150px;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom:5px;
+    
+    background-color: #ccc7c7;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    height: 30px;
+    background-color: #e9e6e6;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td {
+    height: 30px;
+  }
+  
+  .me {
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-bottom:5px;
+  }
+  
+  .will {
+    padding-left: 30px;
+  }
+  
+  .invoice {
+    color: blue;
+  }
+
+  .paid{
+    color:green;
+    background-color: greenyellow;
+    border-color:none ;
+  }
+
+  .dash{
+    width:20px;
+    margin-right: 2px;
+  }
+
+  .analytics {
+    width:20px;
+    padding-right: 5px;
+  }
+
+  .message{
+    width:20px;
+    padding-right: 5px;
+  }
+
+  .collection{
+    width:24px;
+    padding-right: 5px;
+  }
+
+  .user{
+    width:14px;
+    padding-right: 5px;
+  }
+
+  .settings{
+    width:20px;
+    padding-right: 5px;
+  }
+
+  .notification{
+    width:15px;
+    padding-right: 5px;
+  }
+
+  .edit{
+    width:18px;
+    padding-right: 10px;
+  }
+
+  .verified{
+    width:20px;
+    padding-right: 10px;
+  }
+
+  .payment{
+    padding-bottom: 10px;
+  }
+
+    
+  
+  #nil {
+    padding-left: 30px;
+   top:0;
+  }
+  
+  #nil button {
+    height: 30px;
+    width: 50px;
+  }
+  .num2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.nila {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px; 
+}
+.wp{
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    height: 100px;
+    width: 200px;
+    justify-self: center;
+    margin-left: 40px;
+}
+#ma{
+    
+}
+
+
+
+ 
+
+
+ #pa{
+    padding-left: 100px;
+    padding-bottom: 100px;
+ }
+ #e{
+    padding-left: 70px;
+ }
+ .sk {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 0fr 1fr ;
+    column-gap: 20px;
+    background-color: ;
+   }
+   
+   .ak {
+     width: 50px;
+     height:50px;
+   }
+   
+   .dk {
+     font-size: 5px;
+   }
+   .ot{
+    height:100px;
+    width:250px;
+    background-color: aqua;
+   }
+   .nor{
+    margin-top: 20px;
+    margin-left: 50px;
+    height:100px;
+    width:200px;
+    background-color:white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.maja {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 0fr 1fr 0fr;
+    column-gap: 5px;
+   }
+   
+   .soja {
+     padding-top:3px;
+     max-width: 90px;
+     max-height:90px;
+   }
+   
+   .dik {
+     font-size: 8px;
+   }
+   .sowmi{
+    display: flex;
+    flex-direction: row;
+   }
+   .sowmi button{
+   height: 25px;
+   width:45px;
+   margin-top: 18px;
+   margin-left: 100px;
+   }
+   .sowmi h4{
+    padding-left: 10px;
+    font-size: 15px;
+   }
+   .gif{
+    margin-left: 50px;
+    height:100px;
+    width:200px;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 40px;
+   }
+  .pot{
+    color:white;
+    background-color:blue;
+    height:35px;
+    width:220px;
+  }
+  .pot:hover:{
+    color:lightblue;
+  }
+  .nir{
+     height:100px;
+    width:200px;
+    background-color:white;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left: 50px;
+  }
+  .ste{
+    display: flex;
+    flex-direction: row;
+   
+    
+    text-align: center;
+  }
+  .suji{
+    font-size: 1rem;
+    margin-left: 250px;
+    margin-top: 20px;
+  }
+  .bike,.car{
+    display: flex;
+    flex-direction: row;
+  }
+  #ttr{
+    margin-left: 20px;
+  }
+  #without{
+    margin-left: 15px;
+  }
+  #weak{
+    margin-left:  10px;
+  }
+  #debit{
+    margin-top: 25px;
+    margin-left: 100px;
+  }#tom{
+    margin-top: 7px;
+    margin-left:  20px;
+  }
+  #ool{
+    font-size: 30px;
+  }
+  #me{
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom:40px;
+    width: 35px;
+    height:35px;
+  }
+  #uk{
+    display: flex;
+    flex-direction: row;
+  }
+  #loot{
+    margin-left: 40px;
+  }
+  
+  #bugatti{
+    font-size: 32px;
+  }
+  #ferrari{
+    margin-top: 30px;
+    padding-left: 30px;
+    font-size: larger;
+  }
+  #hotel{
+    margin-top: 30px;
+    padding-left: 30px;
+    font-size: larger;
+  }
+  #bill{
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
+  }
+  .backpack{
+    font-size: 50px;
+  }
+  .edit{
+    color:blue
+  }
+  .payment{
+    margin-left:"4px"
+  }
+  .your{
+    color:grey;
+  }
+  #three{
+    
+  }
+  #card{
+    padding-right: 20px;
+    padding-left: 20px ;
+    margin-right:40px;
+    background-color: blue;
+    color:white;
+    border-radius:5px;
+  }
+  #card:active{
+    background-color: white;
+    color:black;
+  }
+  .pot:hover {
+  color: lightblue;
+  background-color: darkblue; 
+}
+.button-post:hover {
+  background-color: navy;
+  color: white;
+}
+.button-post:active,
+.pot:active {
+  
+  transform: translateY(1px);
+}
+#bill:hover,
+.card:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+#bill:active,
+.card:active {
+  transform: translateY(1px);
+}
+.logo-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-content: center;
+  padding-left:20px;
+  height:50px;
+  width: 190px;
+  background-color: grey; 
+}
+
+.logo {
+  height: 30px; 
+  width: 20px; 
+}
+#weak{
+  margin-left: 20px;
+}
+#backpack{
+  font-size:30px;
+}
+#ttr{
+
+}
+#tom{
+  display: flex;
+  flex-direction: row;
+}
+#three{
+  font-size: 20px;
+}
+.button-post:active{
+    background-color:navy;;
+    color:white;
+}
+.pot:active{
+  background-color:navy;;
+    color:white;
+}
+    
+  </style>
+  
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo-container">
+    <img class="logo" src="logo_imge-removebg-preview.png" alt="logo"><h2 style="color:blue">Clever</h2>
+  </div>
+  <div class="Dashboard"><img class="dash" src="dashboard_icon_221153.png">Dashboard</div>
+  <div class="Analytics"><img class="analytics" src=analytics.jpg>Analytics</div>
+  <div class="Messages"><img class="message" src=message.png>Messages</div>
+  <div class="Collections"><img class="collection" src=collection.png>Collections</div>
+  <div class="Users"><img class="user" src=user.png>Users</div>
+  <hr>
+  <div class="Settings"><img class="settings" src=settings-icon-png.jpg>Settings</div>
+  <div class="Notifications"><img class="notification" src=noty.png>Notifications</div>
+</div>
+
+<div class="content">
+  <div class="main-content">
+    <img class="prof" src="photo-1535713875002-d1d0cf377fde.avif" alt="">
+    <div>
+      <div class="marie"><h1 class="mc">Marie Claire</h1></div>
+      <div class="ep"><img class="edit" src="edit.png">Edit profile <span><img class="verified" src="images.jpg">verify</span></div>
+    </div>
+    <div class="button-container">
+      <div class="ok"><button class="button"><img class="ins-img" src="360_F_233001388_nAEcam8u6ksmkcK85KnMC58X7G6glftP.jpg" alt="">insights</button></div>
+      <div class="new-button"><button class="button-post">+ new post</button></div>
+    </div>
+  </div>
+  <div class="var">
+  <div class="bus-bg">
+   <div class="bus">
+    <p id="ferrari">
+        current subscription plan<br><span id="bugatti">PRO</span>
+    </p>
+    <p id="hotel">
+        need extra features<br><button id="bill">Upgrade</button>
+    </p>
+   </div>
+   <div class="box">
+    <div id="uk">
+        <div>
+            <img id="me" style="width:20px,height:20px"src="tower.png" alt="">
+        </div>  
+        <div>
+            <p id="loot">API used<br><span id="ool">2.5.80 of 10.000</span></p>
+        </div>
+    </div>
+   </div>
+  </div>
+  <div class="clg">
+    <div class="blast">
+        
+        <div class="nama">
+            <div class="ste">
+              <div>
+                <h4 id="weak"><span class="your">Your Purpose Plan</span> <br></h4>
+              </div>
+              <div>
+                <h1  class="suji"><h3> </h3><span id="backpack">$59</span>
+                    per year
+                </h1>
+              </div>
+            </div>
+           <div class="bike">
+                <div id="without"><p><img class="verified"src="images.jpg">user</p></div>
+               <div id="ttr"> <p><img class="verified" src="images.jpg">support</p></div>
+            </div>
+            <div class="car">
+                <div id="tom"><p id="jerry"><img class=user src="user.png" alt=""><span id="three">3</span></p></div>
+                <div id="debit"><button id="card">Save</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="not">
+        <div id="uk">
+            <div>
+                <img id="me" style="width:20px,height:20px"src="green towe.png" alt="">
+            </div>  
+            <div>
+                <p id="loot">your plan will renew<br><span id="ool">12.20.24</span></p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    <div class="bot">
+        <div class="sowmi">
+        <h4 class="payment">payment method</h4>
+        <button class="edit">edit</button>
+    </div>
+    
+        <div class="nir">
+            <div class="maja">
+              <div>
+                <img class="soja"src="debit_card.png">
+              </div>
+              <div class="dik">
+                <h1>visa:5432<br>
+                    Exp date:12/12
+                </h1>
+              </div>
+            </div>
+        </div>
+        <div class="gif">
+            <div class="maja">
+              <div>
+                <img class="soja"src="debit_card.png">
+              </div>
+              <div class="dik">
+                <h1>visa:5432<br>
+                    Exp date:12/12
+                </h1>
+              </div>
+            </div>
+        </div>
+        <div id="mike">
+            <button class="pot">upgrade</button>
+        </div>
+                    
+          
+    </div>
+        
+  
+</div>
+<div class="other">
+  <h4 class="me">Others</h4>
+</div>
+<div>
+  <table class="will" >
+    <tr>
+        <th>INVOICE</th>
+        <th>DATE</th>
+        <th>AMOUNT</th>
+        <th>PAYMENT METHOD</th>
+        <th>HEADER</th>  
+        <th>HEADER</th>  
+    </tr>
+    <tr>
+      <td class="invoice">INVOICE A/10</td>
+      <td>MAR 15,2020</td>
+      <td>$143,00</td>
+      <td><img style="height:10px"src="download.png">**4231</td>
+      <td><button class="paid">paid</button></td>
+      <td><img src="Vector.png" alt=""></td>
+    </tr>
+    <tr>
+      <td class="invoice">INVOICE A/10</td>
+      <td>MAR 15,2020</td>
+      <td>$143,00</td>
+      <td><img style="height:10px"src="download.png">**4231</td>
+      <td><button class="paid">paid</button></td>
+      <td><img src="Vector.png" alt=""></td>
+    </tr>
+    <tr>
+      <td class="invoice">INVOICE A/10</td>
+      <td>MAR 15,2020</td>
+      <td>$143,00</td>
+      <td><img style="height:10px"src="download.png">**4231</td>
+      <td><button class="paid">paid</button></td>
+      <td><img src="Vector.png" alt=""></td>
+    </tr>
+    <tr>
+      <td class="invoice">INVOICE A/10</td>
+      <td>MAR 15,2020</td>
+      <td>$143,00</td>
+      <td><img style="height:10px"src="download.png">**4231</td>
+      <td><button class="paid">paid</button></td>
+      <td><img src="Vector.png" alt=""></td>
+    </tr>
+    <tr>
+      <td class="invoice">INVOICE A/10</td>
+      <td>MAR 15,2020</td>
+      <td>$143,00</td>
+      <td><img style="height:10px"src="download.png">**4231</td>
+      <td><button class="paid">paid</button></td>
+      <td><img src="Vector.png" alt=""></td>
+    </tr>
+    <tr>
+      <td class="invoice">INVOICE A/10</td>
+      <td>MAR 15,2020</td>
+      <td>$143,00</td>
+      <td><img style="height:10px"src="download.png">**4231</td>
+      <td><button class="paid">paid</button></td>
+      <td><img src="Vector.png" alt=""></td>
+    </tr>
+  </table>
+</div>
+</div>
+</body>
+</html>
